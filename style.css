@@ -16,7 +16,7 @@ body {
 
 header h1 {
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1.2rem;
 }
 
@@ -33,15 +33,16 @@ header p {
 
 .btn {
   display: flex;
-  flex: 1;
   gap: 1rem;
-  
+  max-width: 600px;
+  margin: 0 auto;
+
 }
 
-button {
+button:not(.set-size-btn) {
+  flex: 1;
   cursor: pointer;
   border: none;
-  color: black;
   font-size: 1rem;
   margin-top: 20px;
   margin-bottom: 1rem;
@@ -83,30 +84,42 @@ button:hover:not(.set-size-btn) {
 }
 
 .reset {
-  color: black;
+  color: white;
   background-color: red;
 }
 
 .set-size {
   display: flex;
-
+max-width: 600px;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin: 0 auto;
 }
 
 input {
+  width: 20%;
   font-size: 1rem;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid black;
+  border: 1px solid gray;
 }
 
 .set-size-btn {
+  cursor: pointer;
+  border: none;
+  color: black;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+  padding: 12px;
+  border-radius: 9px;
+  width: 20%;
   background-color: green;
   color: white;
   transition: transform 0.3s;
   padding: 10px;
+  border: none;
 }
 
 .set-size-btn:hover {
@@ -138,4 +151,24 @@ input {
   text-align: center;
   color: black;
   margin-top: 2rem;
+}
+
+footer {
+  font-weight: 500;
+  opacity: 0.8;
+  margin-top: 2rem;
+  margin-bottom: auto;
+  color: black;
+  text-align: center;
+}
+
+footer a{
+  text-decoration: underline;
+  color: black;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+a:hover{ 
+  transform: translateY(-5px);
 }
