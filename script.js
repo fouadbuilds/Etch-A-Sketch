@@ -98,3 +98,69 @@ function changeSize(input) {
     sizeInput.value = 32; // or whatever default you want
   }
 }
+
+
+// Mobile Support 
+function populateBoard(size) {
+  let board = document.querySelector(".board");
+  let box = board.querySelectorAll("div");
+  box.forEach((div) => div.remove());
+
+  board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+  let amount = size * size;
+  let isDrawing = false; // Track if user is drawing
+
+  for (let i = 0; i < amount; i++) {
+    let box = document.createElement("div");
+
+    // Mouse events
+    box.addEventListener("mousedown", () => {
+      isDrawing = true;
+      colorBox(box);
+    });
+
+    box.addEventListener("mouseenter", () => {
+      if (isDrawing) {
+        colorBox(box);
+      }
+    });
+
+    // Touch events for mobile
+    box.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      isDrawing = true;
+      colorBox(box);
+    });
+
+    box.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const element = document.elementFromPoint(touch.clientX, touch.clientY);
+      if (element && element !== box) {
+        colorBox(element);
+      }
+    });
+
+    board.insertAdjacentElement("beforeend", box);
+  }
+
+  // Stop drawing when mouse/touch is released
+  document.addEventListener("mouseup", () => {
+    isDrawing = false;
+  });
+
+  document.addEventListener("touchend", () => {
+    isDrawing = false;
+  });
+}
+
+// Helper function to color a box
+function colorBox(box) {
+  if (isRandomMode) {
+    box.style.backgroundColor = getRandomColor();
+  } else {
+    box.style.backgroundColor = currentColor;
+  }
+}
