@@ -7,54 +7,81 @@
 body {
   background-color: #f9f9f9;
   font-family: sans-serif;
-  display: block;
-  align-items: center;
-  justify-content: center;
+  display: flex;
   min-height: 100vh;
-  padding: 4rem;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 header h1 {
   text-align: center;
   font-weight: 700;
   margin-bottom: 1.2rem;
+  font-size: 1.5rem;
 }
 
 header p {
   text-align: center;
   opacity: 0.5;
   font-weight: 400;
+  font-size: 0.9rem;
 }
 
-.boxes {
+.container {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.board {
+  width: 100%;
+  max-width: 500px;
+
+  aspect-ratio: 1 / 1;
+
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  margin: 1rem 0;
+}
+
+.message {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: black;
+  margin-top: 1rem;
+  padding: 0 1rem;
 }
 
 .btn {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.7rem;
   max-width: 600px;
   margin: 0 auto;
-
+  padding: 0 1rem;
 }
 
 button:not(.set-size-btn) {
-  flex: 1;
+  flex: 1 1 120px;
+  min-width: 120px; /* Prevents buttons from getting too small */
+
   cursor: pointer;
   border: none;
-  font-size: 1rem;
-  margin-top: 20px;
-  margin-bottom: 1rem;
-  padding: 10px;
+  font-size: 0.9rem;
+  padding: 12px;
   border-radius: 9px;
-  width: 40%;
   transition: transform 0.3s;
   font-weight: 600;
+  margin: 0.25rem 0;
 }
 
 button:hover:not(.set-size-btn) {
-  transform: translateY(5px);
+  transform: translateY(-3px);
 }
 
 .black {
@@ -65,6 +92,7 @@ button:hover:not(.set-size-btn) {
 .eraser {
   background-color: white;
   color: black;
+  border: 1px solid #ddd;
 }
 
 .gray {
@@ -89,16 +117,19 @@ button:hover:not(.set-size-btn) {
 }
 
 .set-size {
-  display: flex;
-max-width: 600px;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin: 0 auto;
+   display: flex;
+  /* Stack vertically on very small screens */
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 0 1rem;
 }
 
 input {
-  width: 20%;
+  width: 100%;
   font-size: 1rem;
   padding: 12px;
   border-radius: 8px;
@@ -113,8 +144,8 @@ input {
   margin-top: 20px;
   margin-bottom: 1rem;
   padding: 12px;
-  border-radius: 9px;
-  width: 20%;
+  border-radius: 8px;
+  width: 100%;
   background-color: green;
   color: white;
   transition: transform 0.3s;
@@ -129,46 +160,22 @@ input {
 
 /* grid style */
 
-.container {
-  margin: 1rem 1rem;
-  display: grid;
-  justify-content: center;
-}
-.board {
-  margin: 1rem 1rem;
-  display: flex;
-  justify-content: center;
-  width: 500px;
-  height: 500px;
-  display: grid;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-}
-
-.message {
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-align: center;
-  color: black;
-  margin-top: 2rem;
-}
-
 footer {
   font-weight: 500;
   opacity: 0.8;
-  margin-top: 2rem;
-  margin-bottom: auto;
+  margin-top: auto;
+  padding: 2rem 1rem 1rem;
   color: black;
   text-align: center;
 }
 
-footer a{
+footer a {
   text-decoration: underline;
   color: black;
   display: inline-block;
   transition: transform 0.3s;
 }
 
-a:hover{ 
+a:hover {
   transform: translateY(-5px);
 }
