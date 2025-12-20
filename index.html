@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>SketchPad</h1>
+      <p class="mode-indicator">Default</p>
+    </header>
+    <div class="container">
+      <div class="board"></div>
+      <p class="message"></p>
+    </div>
+    <div class="btn">
+      <button class="black">Black</button>
+      <button class="eraser">Eraser</button>
+      <button class="gray">Gray</button>
+      <button class="random">Random</button>
+      <button class="reset">Reset</button>
+    </div>
+
+    <div class="set-size">
+      <input
+        type="number"
+        value="32"
+        id="size"
+        
+      />
+      <button class="set-size-btn">Set Size</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: sans-serif;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem;
+}
+
+header h1 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+header p {
+  text-align: center;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+}
+
+.btn {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+  
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: black;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-radius: 9px;
+  width: 40%;
+  transition: transform 0.3s;
+  font-weight: 600;
+}
+
+button:hover:not(.set-size-btn) {
+  transform: translateY(5px);
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.eraser {
+  background-color: white;
+  color: black;
+}
+
+.gray {
+  background-color: #818589;
+  color: black;
+}
+
+.random {
+  background: #020024;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+}
+
+.reset {
+  color: black;
+  background-color: red;
+}
+
+.set-size {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input {
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.set-size-btn {
+  background-color: green;
+  color: white;
+  transition: transform 0.3s;
+  padding: 10px;
+}
+
+.set-size-btn:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* grid style */
+
+.container {
+  margin: 1rem 1rem;
+  display: grid;
+  justify-content: center;
+}
+.board {
+  margin: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  display: grid;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.message {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  color: black;
+  margin-top: 2rem;
+}
