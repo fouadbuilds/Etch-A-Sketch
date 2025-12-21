@@ -1,3 +1,4 @@
+// Comment on Mobile Support at last line
 const container = document.querySelector(".container");
 const setSizeBtn = document.querySelector(".set-size-btn");
 const mode = document.querySelector(".mode-indicator");
@@ -164,3 +165,8 @@ function colorBox(box) {
     box.style.backgroundColor = currentColor;
   }
 }
+
+
+
+
+// When playing around in Mobile, the mouseover event Listener bubbles to everywhere on the DOM and changes every element's background colour. Pretty cool!
